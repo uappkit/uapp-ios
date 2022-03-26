@@ -1,0 +1,15 @@
+# Author: Yin Qisen <yinqisen@gmail.com>
+# Github: https://github.com/uappkit
+# Copyright(c) 2022
+
+name: uapp
+
+include:
+  - path: config/base.yml
+    relativePaths: false
+  - path: config/uapp_dev.yml
+    relativePaths: false
+  - path: config/uapp_release.yml
+    relativePaths: false
+  - path: config/custom.yml
+    relativePaths: false

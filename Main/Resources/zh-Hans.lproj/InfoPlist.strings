@@ -1,0 +1,14 @@
+/*
+ CFBundleDisplayName="uAppKit";
+ NSPhotoLibraryUsageDescription="从相册选择视频或图片用于视频合成";
+ NSPhotoLibraryAddUsageDescription="保存处理后的视频到相册";
+ NSCameraUsageDescription="访问摄像头录制视频用于视频合成";
+ NSMicrophoneUsageDescription="访问麦克风录制视频用于视频合成";
+ NSLocationWhenInUseUsageDescription="视频中合成位置信息需要您的授权，您也可以拒绝使用";
+ */
+
+"A"="当前环境无法运行启用“自定义组件模式”的应用！";
+"B"="查看详情";
+"C"="忽略";
+"D"="打包时未添加%@模块,请参考%@";
+"E"="本应用使用HBuilderX%@编译，而手机端SDK版本是%@。不匹配的版本可能造成应用异常。";

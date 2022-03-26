@@ -1,0 +1,198 @@
+# Author: Yin Qisen <yinqisen@gmail.com>
+# Github: https://github.com/uappkit
+# Copyright(c) 2022
+
+targetTemplates:
+  uAppBase:
+    type: application
+    platform: iOS
+    deploymentTarget: "12.0"
+
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.code0xff.uapp
+      MARKETING_VERSION: 1.0.1
+      CURRENT_PROJECT_VERSION: 1000000
+
+      # TARGETED_DEVICE_FAMILY: iPhone=1, iPad=2, All=1,2
+      TARGETED_DEVICE_FAMILY: 1
+      CODE_SIGN_ENTITLEMENTS: Main/Resources/uapp.entitlements
+      ARCHS: "$(ARCHS_STANDARD)"
+      VALID_ARCHS: arm64 x86_64
+      FRAMEWORK_SEARCH_PATHS: 
+        - "$(inherited)"
+        - "$(DEVELOPER_FRAMEWORKS_DIR)"
+        - "SDKs/SDK/libs/Compatibles"
+      LD_RUNPATH_SEARCH_PATHS:
+        - "$(inherited)"
+        - "@executable_path/Frameworks"
+      LIBRARY_SEARCH_PATHS:
+        - "$(PROJECT_DIR)"
+        - "$(SRCROOT)/SDKs/SDK/libs"
+      OTHER_LDFLAGS: "-ObjC"
+      ENABLE_BITCODE: 'NO'
+      VALIDATE_WORKSPACE: 'YES'
+      HEADER_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(SRCROOT)/SDKs/SDK/inc/**"
+      GCC_PRECOMPILE_PREFIX_HEADER: 'YES'
+      GCC_PREFIX_HEADER: Main/App-Prefix.pch
+      GCC_PREPROCESSOR_DEFINITIONS: "PDR_PLUS_MAP PDR_PLUS_GETUI PDR_PLUS_UMEN"
+
+    sources:
+      - path: Main
+        name: Main
+        excludes:
+          - Pandora
+        buildPhase: none
+
+      - path: Main
+        includes:
+          - main.m
+          - AppDelegate.m
+          - ViewController.m
+        buildPhase: sources
+
+      - path: Main/Resources
+        type: Bundles
+        includes:
+          - LaunchScreen.storyboard
+          - Images.xcassets
+          - logo@2x.png
+          - logo@3x.png
+          - uapp.entitlements
+        buildPhase: resources 
+
+      - path: Main/Pandora
+        type: folder
+        buildPhase: resources
+
+      - path: SDKs/SDK/Bundles
+        name: Bundles
+        group: Main
+        includes:
+          - __uniappes6.js
+          - uni-jsframework-vue3.js
+          - uni-jsframework.js
+          - weex-polyfill.js
+          - weexUniJs.js
+          - unincomponents.ttf
+          - PandoraApi.bundle
+          - DCPGVideo.bundle
+          - DCTZImagePickerController.bundle
+          - DCMediaEditingController.bundle
+          - DCSVProgressHUD.bundle
+        buildPhase: resources
+
+    dependencies:
+      - sdk: libiconv.tbd
+      - sdk: libresolv.tbd
+      - sdk: libbz2.1.0.tbd
+      - sdk: libc++.tbd
+      - sdk: libicucore.tbd
+      - sdk: libz.tbd
+      - sdk: libxml2.tbd
+      - sdk: libiconv.2.tbd
+      - sdk: libsqlite3.0.tbd
+      - sdk: AudioToolbox.framework
+      - sdk: CoreLocation.framework
+      - sdk: AddressBook.framework
+      - sdk: OpenGLES.framework
+      - sdk: MediaPlayer.framework
+      - sdk: AVFoundation.framework
+      - sdk: CoreGraphics.framework
+      - sdk: MobileCoreServices.framework
+      - sdk: QuartzCore.framework
+      - sdk: CoreVideo.framework
+      - sdk: VideoToolbox.framework
+      - sdk: AssetsLibrary.framework
+      - sdk: MetalKit.framework
+      - sdk: CoreMedia.framework
+      - sdk: Photos.framework
+      - sdk: Accelerate.framework
+      - sdk: CoreData.framework
+      - sdk: GLKit.framework
+      - sdk: Foundation.framework
+      - sdk: UIKit.framework
+      - sdk: QuickLook.framework
+      - sdk: CoreMotion.framework
+      - sdk: CFNetwork.framework
+      - sdk: Security.framework
+      - sdk: SystemConfiguration.framework
+      - sdk: JavaScriptCore.framework
+      - sdk: WebKit.framework
+      - sdk: ImageIO.framework
+      - sdk: Accounts.framework
+      - sdk: Social.framework
+      - sdk: CoreTelephony.framework
+      - sdk: CoreFoundation.framework
+      - sdk: CoreText.framework
+      - sdk: UserNotifications.framework
+      - sdk: AuthenticationServices.framework
+      - framework: SDKs/SDK/libs/DCUniVideoPublic.framework
+        embed: false
+      - framework: SDKs/SDK/libs/liblibPGInvocation.a
+        embed: false
+      - framework: SDKs/SDK/libs/libDCUniVideo.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibVideo.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibOauth.a
+        embed: false
+      - framework: SDKs/SDK/libs/libAppleOauth.a
+        embed: false
+      - framework: SDKs/SDK/libs/libWXOauth.a
+        embed: false
+      - framework: SDKs/SDK/libs/libuchardet.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibWeex.a
+        embed: false
+      - framework: SDKs/SDK/libs/libSDWebImage.a
+        embed: false
+      - framework: SDKs/SDK/libs/libDCUniGPUImage.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibAccelerometer.a
+        embed: false
+      - framework: SDKs/SDK/libs/libDCUniBarcode.a
+        embed: false
+      - framework: SDKs/SDK/libs/libDCUniZXing.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibCache.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibIO.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibCamera.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibMedia.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibNativeObj.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibNativeUI.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibNavigator.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibOrientation.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibPGProximity.a
+        embed: false
+      - framework: SDKs/SDK/libs/libcoreSupport.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibPDRCore.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibUI.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibStorage.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibXHR.a
+        embed: false
+      - framework: SDKs/SDK/libs/liblibZip.a
+        embed: false
+      - framework: SDKs/SDK/libs/libmp3lame.a
+        embed: false
+      - framework: SDKs/SDK/libs/libopencore-amrnb.a
+        embed: false
+      - framework: SDKs/SDK/libs/libTouchJSON.a
+        embed: false
+      - framework: SDKs/SDK/libs/storage.framework
+        embed: false
+      - framework: SDKs/SDK/libs/Masonry.framework
+        embed: false

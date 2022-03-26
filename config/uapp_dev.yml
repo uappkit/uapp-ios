@@ -1,0 +1,19 @@
+# Author: Yin Qisen <yinqisen@gmail.com>
+# Github: https://github.com/uappkit
+# Copyright(c) 2022
+
+targets:
+  uapp-dev:
+    templates:
+      - uAppBase
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/Main/Resources/AppDev/Info.plist"
+    sources:
+      - path: Main/Resources
+        type: Bundles
+        includes:
+          - AppDev/control.xml
+        buildPhase: resources 
+    dependencies:
+      - framework: SDKs/SDK/libs/liblibLog.a
+        embed: false

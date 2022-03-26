@@ -1,0 +1,16 @@
+# Author: Yin Qisen <yinqisen@gmail.com>
+# Github: https://github.com/uappkit
+# Copyright(c) 2022
+
+targets:
+  uapp-release:
+    templates:
+      - uAppBase
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/Main/Resources/AppRelease/Info.plist"
+    sources:
+      - path: Main/Resources
+        type: Bundles
+        includes:
+          - AppRelease/control.xml
+        buildPhase: resources 

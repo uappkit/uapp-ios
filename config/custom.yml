@@ -1,0 +1,10 @@
+targetTemplates:
+  uAppBase:
+    settings:
+      DEVELOPMENT_TEAM: 3DSM494K6L
+
+    dependencies:
+      - framework: SDKs/SDK/libs//libWeChatSDK.a
+        embed: false
+      - framework: SDKs/SDK/libs/IJKMediaFrameworkWithSSL.framework
+        embed: false
