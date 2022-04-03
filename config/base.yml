@@ -108,6 +108,7 @@ targetTemplates:
       - sdk: MetalKit.framework
       - sdk: CoreMedia.framework
       - sdk: Photos.framework
+      - sdk: PhotosUI.framework
       - sdk: Accelerate.framework
       - sdk: CoreData.framework
       - sdk: GLKit.framework
