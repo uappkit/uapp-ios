@@ -55,12 +55,14 @@ targetTemplates:
       - path: Main/Resources
         type: Bundles
         includes:
+          - en.lproj/InfoPlist.strings
+          - zh-Hans.lproj/InfoPlist.strings
           - LaunchScreen.storyboard
           - Images.xcassets
           - logo@2x.png
           - logo@3x.png
           - uapp.entitlements
-        buildPhase: resources 
+        buildPhase: resources
 
       - path: Main/Pandora
         type: folder

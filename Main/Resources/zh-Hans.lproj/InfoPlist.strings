@@ -1,11 +1,15 @@
-/*
- CFBundleDisplayName="uAppKit";
- NSPhotoLibraryUsageDescription="从相册选择视频或图片用于视频合成";
- NSPhotoLibraryAddUsageDescription="保存处理后的视频到相册";
- NSCameraUsageDescription="访问摄像头录制视频用于视频合成";
- NSMicrophoneUsageDescription="访问麦克风录制视频用于视频合成";
- NSLocationWhenInUseUsageDescription="视频中合成位置信息需要您的授权，您也可以拒绝使用";
- */
+//CFBundleDisplayName="uAppKit";
+
+//NSPhotoLibraryUsageDescription="从相册选择视频或图片用于视频合成";
+//NSPhotoLibraryAddUsageDescription="保存处理后的视频到相册";
+//NSCameraUsageDescription="访问摄像头录制视频用于视频合成";
+//NSMicrophoneUsageDescription="访问麦克风录制视频用于视频合成";
+//NSLocationWhenInUseUsageDescription="视频中合成位置信息需要您的授权，您也可以拒绝使用";
+
+//NSLocationAlwaysAndWhenInUseUsageDescription="";
+//NSBluetoothPeripheralUsageDescription="";
+//NSSpeechRecognitionUsageDescription="";
+//NSCalendarsUsageDescription="";
 
 "A"="当前环境无法运行启用“自定义组件模式”的应用！";
 "B"="查看详情";
