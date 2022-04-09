@@ -40,7 +40,6 @@ targetTemplates:
 
     sources:
       - path: Main
-        name: Main
         excludes:
           - Pandora
         buildPhase: none
