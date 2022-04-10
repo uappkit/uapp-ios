@@ -1,3 +1,7 @@
+# projectReferences:
+#   IJKMediaPlayer:
+#     path: modules/ijkplayer/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj
+
 targetTemplates:
   uAppBase:
     settings:
@@ -8,3 +12,6 @@ targetTemplates:
         embed: false
       - framework: SDKs/SDK/libs/IJKMediaFrameworkWithSSL.framework
         embed: false
+      # - framework: IJKMediaFrameworkWithSSL.framework
+      #   implicit: true
+      #   embed: true

@@ -80,3 +80,26 @@ uapp 工程配置通过 [xcodegen](https://github.com/yonaskolb/XcodeGen) 来维
 3、运行 `uapp info` 命令查看 JWT Token
 
 详细教程可参考: <http://help.jwt.code0xff.com>
+
+## 如何引入子工程
+
+工程内包含其他子工程的，可以参照 IJKMediaPlayer 配置
+
+projectReferences dependencies 官方用 target:
+
+```.yaml
+    - target: IJKMediaPlayer/IJKMediaFrameworkWithSSL
+      embed: true
+```
+
+但这么用会出现一个 BUG, 当 targets 为多个时, 比如这里的 uapp-dev / uapp-release 两个时会出现 bug，修改 xcode 工程时会丢失这个引用。
+
+看这里也有人反馈过，但貌似都没解决：<https://github.com/yonaskolb/XcodeGen/issues/933>
+
+经过摸索, 可以通过配置 framework + `implicit: true` 解决, 如下:
+
+```.yaml
+    - framework: IJKMediaFrameworkWithSSL.framework
+      implicit: true
+      embed: true
+```
