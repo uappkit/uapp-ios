@@ -109,3 +109,7 @@ projectReferences dependencies 官方用 target:
       implicit: true
       embed: true
 ```
+
+## License
+
+The Apache License 2. Please see [License File](LICENSE.md) for more information.

@@ -85,7 +85,6 @@ targetTemplates:
         buildPhase: resources
 
     dependencies:
-      - sdk: libiconv.tbd
       - sdk: libresolv.tbd
       - sdk: libbz2.1.0.tbd
       - sdk: libc++.tbd
@@ -197,4 +196,6 @@ targetTemplates:
       - framework: SDKs/SDK/libs/storage.framework
         embed: false
       - framework: SDKs/SDK/libs/Masonry.framework
+        embed: false
+      - framework: SDKs/SDK/libs/KSCrash.framework
         embed: false
