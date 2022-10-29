@@ -199,3 +199,8 @@ targetTemplates:
         embed: false
       - framework: SDKs/SDK/libs/KSCrash.framework
         embed: false
+
+    preBuildScripts:
+      - path: Main/prebuild-script.sh
+    postBuildScripts:
+      - path: Main/postbuild-script.sh
