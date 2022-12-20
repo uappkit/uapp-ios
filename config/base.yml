@@ -18,10 +18,9 @@ targetTemplates:
       CODE_SIGN_ENTITLEMENTS: Main/Resources/uapp.entitlements
       ARCHS: "$(ARCHS_STANDARD)"
       VALID_ARCHS: arm64 x86_64
-      FRAMEWORK_SEARCH_PATHS: 
+      FRAMEWORK_SEARCH_PATHS:
         - "$(inherited)"
         - "$(DEVELOPER_FRAMEWORKS_DIR)"
-        - "SDKs/SDK/libs/Compatibles"
       LD_RUNPATH_SEARCH_PATHS:
         - "$(inherited)"
         - "@executable_path/Frameworks"
