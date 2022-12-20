@@ -17,10 +17,17 @@ iOS 的工程化一直都不太方便，通常都是用的 CocoaPods，但不适
 │   └── main.m
 ├── README.md
 ├── SDKs  # gitignore, 存放官方发布离线打包的SDK，或其他依赖的SDK, Libs等
+│   ├── DouyinPlugin  # 参照示例，第三方插件
+│   ├── FFMpegPlugin  # 参照示例，定制插件
+│   ├── README.md
+│   ├── SDK -> $HOME/.uappsdk/ios/SDK  # 软连接: ln -sf $HOME/.uappsdk/ios/SDK SDK
+│   └── ijkplayer -> $HOME/.uappsdk/ios/ijkplayer
 ├── config
+│   ├── base.yml
+│   ├── custom.yml
+│   ├── uapp_dev.yml
+│   └── uapp_release.yml
 ├── manifest.json  # 指向 HBuilderX 工程里 manifest.json 的软连接
-├── modules        # 存放第三方插件工程
-│   └── README.md
 ├── out            # gitignore, `uapp publish debug` 生成打包基座，并同步给 HBuilderX
 │   └── uapp_debug.xcarchive
 ├── project.yml
@@ -29,7 +36,13 @@ iOS 的工程化一直都不太方便，通常都是用的 CocoaPods，但不适
 
 ### 下载 ios 离线工程模板
 
-`git clone https://github.com/uappkit/uapp-ios.git`
+```bash
+git clone https://github.com/uappkit/uapp-ios.git
+
+# 创建 SDK 软连接
+cd uapp-ios
+ln -sf $HOME/.uappsdk/ios/SDK SDKs/SDK
+```
 
 ### XcodeGen
 
@@ -61,13 +74,19 @@ uapp 工程配置通过 [xcodegen](https://github.com/yonaskolb/XcodeGen) 来维
 
 ## 重点说明
 
-第一次使用，或者修改 xcodegen 配置后，一定要执行:
+**不要直接修改工程文件**，第一次使用，或者修改 xcodegen 配置后，一定要执行:
 
 `xcodegen`
 
-会重新生成 xcode 的工程文件 `uapp.xcodeproj`
+会重新生成 xcode 的工程文件 `uapp.xcodeproj`。如果一定要修改工程文件，那就记住不要再使用 xcodegen 命令了，否则工程文件的修改都会被覆盖掉。
 
-命令行可通过 `open uapp.xcodeproj` 打开 xcode 工程:
+命令行可通过 `open uapp.xcodeproj` 打开 xcode 工程。
+
+### SDK更新注意事项
+
+apple IAP 内购出错：
+
+* SDK/Bundles/PandoraApi.bundle/feature.plist, Payment 添加 `appleiap: PGPlatbyIAP`
 
 ## 苹果登录 Sign In with Apple
 

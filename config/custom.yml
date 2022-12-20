@@ -1,6 +1,6 @@
 # projectReferences:
 #   IJKMediaPlayer:
-#     path: modules/ijkplayer/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj
+#     path: SDKs/ijkplayer/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj
 
 targetTemplates:
   uAppBase:
