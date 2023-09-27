@@ -9,11 +9,14 @@ targets:
     settings:
       INFOPLIST_FILE: "$(SRCROOT)/Main/Resources/AppDev/Info.plist"
     sources:
+      - path: Main/Resources/AppDev/HXDependencies
+        type: folder
+        buildPhase: resources
       - path: Main/Resources
         type: Bundles
         includes:
           - AppDev/control.xml
-        buildPhase: resources 
+        buildPhase: resources
     dependencies:
       - framework: SDKs/SDK/libs/liblibLog.a
         embed: false
