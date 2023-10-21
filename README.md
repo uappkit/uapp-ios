@@ -1,3 +1,10 @@
+已通过 uapp add ios 创建工程
+
+代码发布位置：
+<https://gitee.com/uappkit/platform>
+
+> 此工程将存档，不再维护，未来将移除。
+
 ## uapp iOS 离线工程
 
 iOS 的工程化一直都不太方便，通常都是用的 CocoaPods，但不适合DCloud 离线SDK 的发布形式。经过我们在产品中的不断实践，最终选择了 XCodeGen。
